@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity(name = "Commit")
-@Table(name = "tb_commit")
+@Table(name = "commit")
 @Component
 public class CommitEntity {
     

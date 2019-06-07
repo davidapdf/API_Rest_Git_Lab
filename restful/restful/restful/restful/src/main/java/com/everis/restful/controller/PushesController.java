@@ -43,8 +43,10 @@ public class PushesController {
 	
 	
 	@PostMapping("/push/test")
-	public Push readAndSendPushTest(@RequestBody Push push) {
-		return push;
+	public ResponseEntity<PushEntity> readAndSendPushTest(@RequestBody Push push) {
+		setInfoPushEntity(pushEntity,push);
+		pushEntityService.save(pushEntity);
+		return new ResponseEntity<PushEntity>(pushEntity,HttpStatus.OK);
 	}
 	
 	
@@ -133,6 +135,7 @@ public class PushesController {
 	
 	
 	private void setInfoPushEntity(PushEntity pushEntity, Push push){
+		
 		pushEntity.setObjectKind(push.getObjectKind());
 		pushEntity.setBefore(push.getBefore());
 		pushEntity.setAfter(push.getAfter());

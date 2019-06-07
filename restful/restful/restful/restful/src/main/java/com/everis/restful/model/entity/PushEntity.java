@@ -2,10 +2,7 @@ package com.everis.restful.model.entity;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -16,14 +13,18 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
 
+
 @Entity(name = "Push")
 @Table(name = "push")
 @Component
 public class PushEntity {
 	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	//private AtomicLong sequence = new AtomicLong();
+	
 	private String objectKind;
 	private String before;
 	private String after;
@@ -42,20 +43,6 @@ public class PushEntity {
 	
 	
     public PushEntity(){}
-
-
-
-	public Long getId() {
-		return id;
-	}
-
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
 
 	public String getObjectKind() {
 		return objectKind;
@@ -198,6 +185,19 @@ public class PushEntity {
 	public void setTotalCommitsCount(int totalCommitsCount) {
 		this.totalCommitsCount = totalCommitsCount;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	
     
