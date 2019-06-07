@@ -28,7 +28,7 @@ public class Alert {
 
 	   @OneToMany(mappedBy = "alert")
 	   @JsonManagedReference
-	   @JsonProperty("details")
+	   @JsonProperty("Detail")
 	   @Embedded
 	   private List<Detail> details = new ArrayList<>();
 	   
