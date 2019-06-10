@@ -43,7 +43,7 @@ public class Swagger {
                 .version("1.0.0")
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0\"")
-                .contact(new Contact("David Alexandre de Paula Dias Filho end Davide Sgalambro", "https://www.linkedin.com/in/david-alexandre-de-paula-dias-filho-54a96291", "david.paula.dias@everis.com;davide.sgalambro.st@everis.com"))
+                .contact(new Contact("David Alexandre de Paula Dias Filho", "https://www.linkedin.com/in/david-alexandre-de-paula-dias-filho-54a96291", "david.paula.dias@everis.com"))
                 .build();
 	}
 }
