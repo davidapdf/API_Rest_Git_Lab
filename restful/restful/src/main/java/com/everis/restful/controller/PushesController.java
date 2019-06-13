@@ -2,14 +2,16 @@ package com.everis.restful.controller;
 
 
 import java.sql.Timestamp;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.everis.restful.model.Added;
 import com.everis.restful.model.Commit;
 import com.everis.restful.model.Modified;
@@ -51,7 +53,9 @@ public class PushesController {
 	}
 	*/
 	
-	@PostMapping("/event/push")
+	@RequestMapping(value = "/event", 
+			        headers = "X-Gitlab-Event=Push Hook",
+			        method = RequestMethod.POST)
 	@ApiOperation(value="Salva Envento")
 	public ResponseEntity<Push> readAndSendPush(@RequestBody Push push) {
 		// setar valores de utilidades (data atual)
